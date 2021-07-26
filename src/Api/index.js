@@ -1,7 +1,7 @@
 import axios from 'axios'
-
-export const fetchData = async (country)=>{
-    var url = 'https://covid19.mathdro.id/api'
+var url = 'https://covid19.mathdro.id/api'
+export const fetchData = async (country='')=>{
+     url = 'https://covid19.mathdro.id/api'
     try {
         if(country.length){
             url = `https://covid19.mathdro.id/api/countries/${country}`
@@ -13,6 +13,7 @@ export const fetchData = async (country)=>{
             deaths:res.data.deaths,
             lastUpdate:res.data.lastUpdate
         }
+        console.log(data)
         return data;
     } catch (error) {
         

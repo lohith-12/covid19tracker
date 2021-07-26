@@ -9,12 +9,12 @@ body{
   margin-top: 25px;
 }
 .image{
-  width: 50%;
-  height: 100px;
+  width: 299px;
+  height: 90px;
   margin-bottom: 25px;
 }
 @media(min-width:'350px'){
   .image{
-    width: 100%;
+    width: 25px;
   }
 }

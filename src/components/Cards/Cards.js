@@ -5,14 +5,8 @@ import Moment from 'react-moment';
 import CountUp from 'react-countup'
 import cx from 'classnames'
 export const Cards = ({data}) => {
-    var confirmed,recovered,deaths,lastUpdate;
-    if(data){
-        confirmed= data.confirmed;
-        recovered=data.recovered;
-        deaths=data.deaths;
-        lastUpdate=data.lastUpdate
-    }
-//    const {confirmed,recovered,deaths,lastUpdate} =data;
+   
+   const {confirmed,recovered,deaths,lastUpdate} = data;
     if(!confirmed) return <p>Loading</p>
     return (
         <Grid container spacing={3} justifyContent="center">

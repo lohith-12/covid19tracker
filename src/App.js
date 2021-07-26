@@ -6,8 +6,13 @@ import {fetchData} from './Api/index'
 import CountryPicker from './components/CountryPicker/CountryPicker'
 class App extends Component {
   state ={
-    data:{},
-    country:' '
+    data:{
+      confirmed:0,
+      recovered:0,
+      deaths:0,
+      lastUpdate:0
+    },
+    country:''
   }
   async componentDidMount(){
     const fetchedData = await fetchData();
@@ -21,6 +26,7 @@ class App extends Component {
   }
   render() {
     const {data,country} = this.state
+    console.log(data)
     return (
       <div className={cls.container} >
         <img className={cls.image} src="https://raw.githubusercontent.com/adrianhajdin/project_corona_tracker/master/src/images/image.png" alt="covid19tracker"/>
