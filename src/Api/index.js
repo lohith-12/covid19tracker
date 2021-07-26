@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-var url = 'https://covid19.mathdro.id/api'
 export const fetchData = async (country)=>{
+    var url = 'https://covid19.mathdro.id/api'
     try {
-        if(country){
+        if(country.length){
             url = `https://covid19.mathdro.id/api/countries/${country}`
         }
         const res = await axios.get(url);
@@ -13,12 +13,13 @@ export const fetchData = async (country)=>{
             deaths:res.data.deaths,
             lastUpdate:res.data.lastUpdate
         }
-        return  data;
+        return data;
     } catch (error) {
         
     }
 }
 export const fetchDaily = async ()=>{
+    var url = 'https://covid19.mathdro.id/api'
     try {
         const res = await axios.get(`${url}/daily`)
         //console.log(res.data)

@@ -7,15 +7,14 @@ import CountryPicker from './components/CountryPicker/CountryPicker'
 class App extends Component {
   state ={
     data:{},
-    country:''
+    country:' '
   }
   async componentDidMount(){
     const fetchedData = await fetchData();
-    this.setState({data:fetchedData})
+    this.setState({data:fetchedData,country:''})
   }
   handleCountrychange = async (country)=>{
-    console.log(country);
-  
+    console.log(country.length);
     const fetchedData = await fetchData(country);
     this.setState({data:fetchedData,country:country})
     

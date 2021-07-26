@@ -12,7 +12,6 @@ class Charts extends Component {
             data:fetchData
         })
     }
-    
        options = {
             scales: {
                 yAxes: [
@@ -25,7 +24,6 @@ class Charts extends Component {
             },
             };
     render() {
-        if(!this.state.data) return <p>Loading</p>
         var lineData;
         if(this.state.data){
         lineData = {
@@ -44,10 +42,11 @@ class Charts extends Component {
             ]
         }
     }
+    var bardata;
     if(this.props.data){
         const {confirmed,recovered,deaths}=this.props.data;
         if(!confirmed) return <p>loading</p> ;
-        const bardata = {
+         bardata = {
             labels:['Infected','Recoverd','Deaths'],
                             datasets:[
                     {
@@ -59,12 +58,13 @@ class Charts extends Component {
                         ],
                     data:[confirmed.value,recovered.value,deaths.value]
                     }]}
-            return (
+            
+        }
+        return (
                 <div className={cls.container}>
                     {this.props.country?<Bar data ={bardata}/>:<Line data={lineData}/>}
                 </div>
-            )
-        }
+        )
 }
 }
 export default  Charts
